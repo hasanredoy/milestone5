@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub like delete button</title>
+</head>
+<body>
+  <h1 id="h1-id">hello world</h1>
+  <input type="text" placeholder="please type delete" id="input-id">
+  <button id="delete-btn" disabled>delete</button>
+
+  <script>
+    document.getElementById('input-id').addEventListener('keyup',function(event){
+      const text = event.target.value
+      const deleteBtn= document.getElementById('delete-btn')
+      if(text === 'delete'){
+        deleteBtn.removeAttribute('disabled')
+      }
+      else{
+        deleteBtn.setAttribute('disabled',true)
+      }
+    })
+
+// stop Propagation will stop the bubbule reaction
+    document.getElementById('delete-btn').addEventListener('click', function(event){
+     const h1 =  document.getElementById('h1-id').style.display='none'
+     event.stopPropagation();
+    })
+  </script>
+</body>
+</html>

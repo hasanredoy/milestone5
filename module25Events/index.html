@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Script Events</title>
+
+  
+</head>
+<body>
+  <main>
+    <h1 id="main-id">Exploring Java Script Events</h1>
+    <!-- Writing codes in button  -->
+    <button onclick="
+      document.body.style.backgroundColor='tomato'
+    ">Writing Events On button </button>
+    <!-- Writing codes in external js file -->
+    <button onclick="bggColor()">Writing Events in external file</button>
+    <!-- Writing codes in external js file by id -->
+    <button id="by-id">Writing Events in external file by id</button>
+    <!-- Writing codes in external js file by id with addEventsListener -->
+    <button id="ByAddEventListener">Writing Events in external file by id</button>
+    <!-- Writing codes in external js file by id with addEventsListener-->
+    <button id="AddEventListener">Writing Events in external file by id with addEventsListener.1</button>
+    <!-- Writing codes in external js file by id with addEventsListen [final will use most of the time ] -->
+    <button id="EventListener">Writing Events in external file by id with addEventsListener will use most of the time</button>
+ 
+    <br>
+    <!-- changing text of h1 by onclick -->
+    <button id="textChanger">Will change the H1 </button>
+
+    <br>
+    <br>
+  <!-- changing text of h2 by onclick of input-->
+  <h2 id="h2-id">hello i will be update by text of input </h2>
+  <input type="text" id="input">
+  <button id="h2-changer">Will Change the h2</button>
+
+  </main>
+  <script src="/module25Events/events.js"></script>
+</body>
+</html>

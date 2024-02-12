@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body{
+      border: 2px solid black;
+    }
+    section{
+      border: 2px solid green;
+    }
+    ul{
+      border: 2px solid blue;
+    }
+    #item2{
+      border: 2px solid goldenrod;
+    }
+  </style>
+  <title>Bubble Event</title>
+</head>
+<body>
+  <h1>Exploring Bubble Event</h1>
+  <section id="section-container">
+    <ul id="ul">
+      <li id="item1">item1</li>
+      <li id="item2">item2</li>
+      <li id="item3">item3</li>
+      <li id="item4">item4</li>
+    </ul>
+  </section>
+
+<!-- all java script codes are bleow -->
+
+<script>
+
+  // stop Propagation will stop the bubble reaction
+  // on the element we want 
+  const item2Clicked =document.getElementById('item2');
+
+  item2Clicked.addEventListener('click',function(event){
+    event.stopPropagation();
+    // console.log('item 2 was clicked')
+  }) 
+  // stop immediate Propagation will stop the bubble reaction
+  // on the element we want 
+ document.getElementById('item2').addEventListener('click',function(event){
+    event.stopImmediatePropagation();
+    console.log('item 2 second was clicked')
+  }) 
+ 
+  document.getElementById('item2').addEventListener('click',function(event){
+    event.stopPropagation();
+    console.log('item 2 was clicked')
+  }) 
+  // ul click  
+  document.getElementById('ul').addEventListener('click',function(){
+    console.log('ul was clicked')
+  })
+  // section clicked 
+  document.getElementById('section-container').addEventListener('click',function(){
+    console.log('section was clicked')
+  })
+</script>
+</body>
+</html>
