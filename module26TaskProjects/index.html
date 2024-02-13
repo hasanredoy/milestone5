@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geometry Project</title>
+  <!-- tailwind and daisy ui cdn -->
+
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <header>
+    <nav>
+
+    </nav>
+  </header>
+  <main>
+    <!-- main callculatios area  -->
+    <section class="flex">
+      <!-- triangle section  -->
+      <div class="card w-96 bg-base-100 shadow-xl">
+        <figure class="px-10 pt-10">
+          <img src="/module26TaskProjects/images/triangle.png" alt="Shoes" class="rounded-xl" />
+        </figure>
+        <div class="card-body items-center text-center">
+          <h2 class="card-title">Triangle</h2>
+          <p>Area (A) = 0.5 X b X h</p>
+          <div class="flex">
+            <input id="triangle-base" type="text" placeholder="base" class="bg-slate-100 w-24">
+            <p class="mr-4 ml-4">cm</p>
+            <input id="triangle-height" type="text" placeholder="height" class="bg-slate-100 w-24">
+            <p>cm</p>
+
+          </div>
+          <div class="">
+            <button class="btn btn-primary w-60" onclick="onclickOfTriangle()">Calculate</button>
+          </div>
+        </div>
+      </div>
+      <!-- rectangle area -->
+      <div class="card w-96 bg-base-100 shadow-xl">
+        <figure class="px-10 pt-10">
+          <img src="/module26TaskProjects/images/rectangle.png" alt="Shoes" class="rounded-xl" />
+        </figure>
+        <div class="card-body items-center text-center">
+          <h2 class="card-title">Triangle</h2>
+          <p>Area (A) = 0.5 X b X h</p>
+          <div class="flex">
+            <input id="rectangle" type="text" placeholder="base" class="bg-slate-100 w-24">
+            <p class="mr-4 ml-4">cm</p>
+            <input id="rectangle" type="text" placeholder="height" class="bg-slate-100 w-24">
+            <p>cm</p>
+
+          </div>
+          <div class="">
+            <button class="btn btn-primary w-60" onclick="onclickOfRectangle()">Calculate</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- side output area  -->
+    <section>
+      <h4>Area Calculation</h4>
+      <div  class="flex">
+        <p id="will-print-the-results-of-calculation"></p> <span>cm</span><span><sup>2</sup></span>
+        <p id="will-print-the-results-of-calculation-of-rectangle"></p> <span>cm</span><span><sup>2</sup></span>
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/module26TaskProjects/triangel.js"></script>
+  <script src="/module26TaskProjects/rectangle.js"></script>
+</body>
+
+</html>
