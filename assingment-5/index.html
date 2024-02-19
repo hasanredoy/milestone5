@@ -416,14 +416,16 @@
               <!-- total price section  -->
               <div class="flex justify-between my-3">
                 <h1 class=" text-xl lg:text-2xl font-semibold pb-2 ">Total Price </h1>
-                <h1 class=" text-xl lg:text-2xl font-semibold pb-2 ">BTD <span>0</span></h1>
+                <h1 class=" text-xl lg:text-2xl font-semibold pb-2 ">BTD <span id="totalPrice">0</span></h1>
 
               </div>
               <!-- input div -->
+            <div>
               <div id="inpput" class="bg-white flex flex-col lg:flex-row justify-between p-2 rounded-lg hidden">
-                <input type="text" placeholder="Have any Coupon?" class="text-xl outline-none">
-                <button class="btn bg-[#1DD100] text-white text-xl">Apply</button>
+                <input id="Coupon-input" type="text" placeholder="Have any Coupon?" class="text-xl outline-none">
+                <button class="btn bg-[#1DD100] text-white text-xl" onclick="applyForDiscount()">Apply</button>
               </div>
+            </div>
 
               <!-- grand total price section  -->
               <div class="flex justify-between my-3">
@@ -445,14 +447,14 @@
               <div id="num" class="my-2">
                 <label  for="number" class="text-2xl font-bold">Phone Number* </label>
                 <br>
-                <input  type="number" placeholder="Enter You're Phone Number"
+                <input id="function-num"  type="number" placeholder="Enter You're Phone Number"
                   class="text-2xl rounded-lg border p-4  w-[100%] lg:w-[450px] my-3">
               </div>
-              <!-- name  -->
+              <!-- email  -->
               <div>
                 <label for="email" class="text-2xl font-bold">Email ID* </label>
                 <br>
-                <input type="text" placeholder="Enter You're Email"
+                <input type="email" placeholder="Enter You're Email"
                   class="text-2xl rounded-lg border p-4  w-[100%] lg:w-[450px] my-3">
               </div>
             </div>

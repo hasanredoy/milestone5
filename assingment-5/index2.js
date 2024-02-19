@@ -1,7 +1,8 @@
-let seatButtons = document.getElementsByClassName('w-[110px]')
 
+let seatButtons = document.getElementsByClassName('w-[110px]')
+let total=0;
 let left= 39;
-var sum = 0;
+var sum = 1;
 for (let i =0; i<seatButtons.length; i++) {
   
   let button = seatButtons[i]
@@ -13,13 +14,13 @@ for (let i =0; i<seatButtons.length; i++) {
     
   //  
   button.addEventListener('click', function() {
-     getInnerText= button.innerText
+    let getInnerText= button.innerText
     console.log(getInnerText)
 // booked sit
 button.classList.add('bg-[#1DD100]')
 // booked=sum
    
-  let booked = document.getElementById('sit-booked').innerText = sum;sum++
+  let booked = document.getElementById('sit-booked').innerText = sum;sum=sum+1
   if(booked>=4){
     // document.getElementById('A1').setAttribute(makeDisable)
     // document.getElementById('a-section').disabled = true;
@@ -66,7 +67,7 @@ button.classList.add('bg-[#1DD100]')
     console.log(4)
   }
   console.log(8)
-  })
+  
 
 // append part 
 // console.log(getInnerText)
@@ -93,64 +94,32 @@ button.classList.add('bg-[#1DD100]')
     tableRow.appendChild(Price);
 
     getTheValuePrintDiv.appendChild(tableRow)  
- 
 
-  // button.addEventListener('click', function () {
-  //   // console.log('hello')
-  //   button.classList.add('bg-[#1DD100]')
-  //   let getInnerText = button.innerHTML;
-  //   console.log(getInnerText)
-  //   const getTheValuePrintDiv = document.getElementById('print-div')
-  //   // addArray.push(getInnerText)
-  //   const printValue = document.createElement('td')
-  //   printValue.innerText = getInnerText;
-  //   console.log(printValue)
+     //  available sit sec 
+    const available =
+      document.getElementById('available-sit').innerText =left;
+    left--;
 
+    let calculation =parseInt(booked)*550
+    
+    total= document.getElementById('totalPrice').innerText=calculation;
 
+    if(booked>=4){
+          showHome('inpput')
+        }
+      if(booked>=1 ){
+        document.getElementById('next-button').removeAttribute('disabled')
+      }
 
-  //   const Class = document.createElement('td')
-  //   Class.innerText = 'Economy';
+ })
 
-  //   const Price = document.createElement('td')
-  //   Price.innerText = 550
-
-  //   Price.classList.add('mr-0')
-  //   // creating div
-  //   const tableRow = document.createElement('tr')
-
-  //   tableRow.appendChild(printValue);
-  //   tableRow.appendChild(Class);
-  //   tableRow.appendChild(Price);
-
-  //   getTheValuePrintDiv.appendChild(tableRow)
-  //   // document.getElementById('next-button').removeAttribute('disabled')
-
-  //   //  available sit sec 
-  //   const available =
-  //     document.getElementById('available-sit').innerText = sitAvailable;
-  //   sitAvailable--;
-  //   // booked sit  
-  //   sitBooked=sitBooked+1
-  //   booked = document.getElementById('sit-booked').innerText = sitBooked;
-  //   // console.log(booked)
-   
-  //   // console.log(sitBooked)
-  //   if (sitBooked > 1) {
-  //     document.getElementById('next-button').removeAttribute('disabled')
-  //   }
-  //   if(sitBooked>=4){
-  //     showHome('inpput')
-  //   }
-
-  //     if(booked>4){
-  // // //  alert('Book Limitation is Over')
-  // // // hideHome('buttons-div')
-  // // this.addEventListener( 'mouseenter' ,)
-  // // makeDisable(seatButtons)
-  // this.disabled=true
-  //  }
-  // })
- 
-  
 }
-console.log()
+
+function applyForDiscount(){
+  const getInputValue=document.getElementById('Coupon-input').value;
+  console.log(getInputValue)
+  const fix = getInputValue.split(' ').join('').toUpperCase()
+  if(fix==='NEW15'){
+      
+  }
+}

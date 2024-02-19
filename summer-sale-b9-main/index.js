@@ -25,7 +25,7 @@ Price=Price+price
 
   function applyForDiscount(){
     const getInputValue=document.getElementById('input-field').value;
-    // console.log(getInputValue)
+    console.log(getInputValue)
     const fix = getInputValue.split(' ').join('').toUpperCase()
     
   
