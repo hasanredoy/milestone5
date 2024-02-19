@@ -36,7 +36,7 @@ document.getElementById('play-again-btn').addEventListener('click', function(){
 })
 // keyUp function 
 let score=0;
-
+// console.log(score)
   let life=5;
   if(score === 10){
     life++
@@ -80,6 +80,7 @@ function onKeyUp(event){
   document.getElementById('life').innerText=life;
 }
 
+
 document.addEventListener('keyup',onKeyUp)
 
 // trying to make start with enter 
@@ -91,3 +92,4 @@ document.addEventListener('keydown',function(e){
     // continueGame()
    }
 })
+//
