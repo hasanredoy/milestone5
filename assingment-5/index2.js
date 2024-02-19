@@ -1,5 +1,7 @@
 
 let seatButtons = document.getElementsByClassName('w-[110px]')
+
+let addArray =[];
 let total=0;
 let left= 39;
 var sum = 1;
@@ -7,17 +9,19 @@ for (let i =0; i<seatButtons.length; i++) {
   
   let button = seatButtons[i]
   // console.log(button)
-  // click button 
-   button.addEventListener('dblclick', function () {
-    button.classList.remove('bg-[#1DD100]')
-  })
-    
-  //  
+  let add=0;
+   
   button.addEventListener('click', function() {
     let getInnerText= button.innerText
-    console.log(getInnerText)
+    // console.log(getInnerText)
+    add++;
+   
 // booked sit
 button.classList.add('bg-[#1DD100]')
+let extraClass=button.classList.add('added')
+// button.classList.add('hidden')
+// console.log(extraClass)
+
 // booked=sum
    
   let booked = document.getElementById('sit-booked').innerText = sum;sum=sum+1
@@ -66,16 +70,20 @@ button.classList.add('bg-[#1DD100]')
     makeDisable('G4')
     console.log(4)
   }
-  console.log(8)
+  // console.log(8)
   
 
 // append part 
 // console.log(getInnerText)
     const getTheValuePrintDiv = document.getElementById('print-div')
-    // addArray.push(getInnerText)
+    // addArray.push()
+    // console.log(getTheValuePrintDiv.classList)
     const printValue = document.createElement('td')
+   let getClass= printValue.classList.add('added')
+  //  addArray.push()
+
     printValue.innerText = getInnerText;
-    console.log(printValue)
+    // console.log(printValue)
 
 
 
@@ -110,16 +118,37 @@ button.classList.add('bg-[#1DD100]')
       if(booked>=1 ){
         document.getElementById('next-button').removeAttribute('disabled')
       }
-
+      // button.setAttribute('disabled')
+      if(add>=1){
+        button.disabled= true;
+        button.classList.add('add')
+          
+      }
  })
 
 }
+ let getValue = Array.from(addArray.values)
+console.log(getValue)
 
 function applyForDiscount(){
   const getInputValue=document.getElementById('Coupon-input').value;
   console.log(getInputValue)
-  const fix = getInputValue.split(' ').join('').toUpperCase()
+  const fix = getInputValue.split(' ').join('').toUpperCase();
   if(fix==='NEW15'){
-      
+    const discount=total*0.15;
+   let grandTotal= total-discount;
+   document.getElementById('grandTotal').innerText= grandTotal;
+  
+  //  document.getElementById('append').appendChild(createdElement)
+   hideHome('inpput')
+  } 
+  else if(fix==='COUPLE20'){
+    const discount=total*0.2;
+   const grandTotal= total-discount;
+   document.getElementById('grandTotal').innerText=grandTotal;
+   hideHome('inpput')
+  }
+  else{
+    alert('invalid coupon')
   }
 }

@@ -17,6 +17,12 @@
         padding-right: 0;
        
       }
+
+      button:disabled.add{
+    border: 4px solid #999999;
+    background-color: green;
+    color: white;
+}
        @media screen and (max-width:600px) {
         td{
           padding-right: 30px;
@@ -67,7 +73,7 @@
             </ul>
           </div>
           <div class="navbar-end">
-            <a class="btn text-green-500 text-xl">Bus <img src="/assingment-5/images/bus-icon.png" alt=""></a>
+            <a href="#function" class="btn text-green-500 text-xl">Bus <img src="/assingment-5/images/bus-icon.png" alt="" ></a>
           </div>
         </div>
       </nav>
@@ -222,8 +228,8 @@
                   9:00pm
                 </h2>
               </div>
-              <div class="flex flex-col lg:flex-row justify-evenly">
-                <button class="btn text-lg">Boarding Point - Laxmipur</button>
+              <div class="flex flex-col lg:flex-row justify-evenly space-y-4">
+                <button class=" bg-slate-200 rounded-xl  text-lg my-4 p-2 py-6 lg:py-3">Boarding Point - Laxmipur</button>
                 <button class="btn text-lg">Dropping Point - Bogura</button>
                 <button class="btn text-lg">Est. Time - 11 Hour</button>
               </div>
@@ -268,7 +274,9 @@
                   <h1 class=" block text-2xl w-[10%] ">A</h1>
                 </div>
                 <div class="grid grid-cols-2 gap-y-2 lg:gap-y-0 lg:grid-cols-5 gap-x-16 my-4 w-[80%]">
-                  <button id="A1" class="btn text-xl w-[110px]">A1</button>
+                  <button id="A1" class="btn text-xl w-[110px]">A1
+                    <span id="showA1" class="bg-[#1DD100] w-[110px] hidden">A1</span>
+                  </button>
                   <button id="A2" class="btn text-xl w-[110px]">A2</button>
                   <span class="w-[50px] hidden lg:block"></span>
                   <button id="A3" class="btn text-xl w-[110px]">A3</button>
@@ -428,11 +436,15 @@
             </div>
 
               <!-- grand total price section  -->
+              <div id="append" class="flex justify-between my-3">
+                
+              </div>
               <div class="flex justify-between my-3">
                 <h1 class=" text-xl lg:text-2xl font-semibold pb-2 "> Grand Total </h1>
-                <h1 class=" text-xl lg:text-2xl font-semibold pb-2 ">BTD <span>0</span></h1>
+                <h1 class=" text-xl lg:text-2xl font-semibold pb-2 ">BTD <span id="grandTotal">0</span></h1>
 
               </div>
+              
             </div>
             <!-- input div -->
             <div>
@@ -473,9 +485,9 @@
     <!-- ----------------------------- -->
 
     <!-- footer section  -->
-    <footer class="bg-black text-white p-4 lg:p-10 w-[98%] mx-auto">
-      <section class="flex justify-between flex-col lg:flex-row border-b-2 border-dashed">
-        <div>
+    <footer class="bg-black text-white p-4 lg:p-10  mx-auto">
+      <section class="flex justify-between flex-col lg:flex-row border-b border-dashed">
+        <div class="border-b border-dashed pb-3 lg:border-none">
           <a class="btn btn-ghost text-2xl font-black">P-Ticket</a>
           <p>P-Ticket is a digital platform to
             <br>
@@ -490,7 +502,7 @@
         <!-- -------------  -->
       </section>
       <div class="flex justify-between mt-2">
-        <p>@all rights reserved, P-Ticket services limited.2024</p>
+        <p class="border-r border-dashed mr-2 lg:border-none">@all rights reserved, P-Ticket services limited.2024</p>
         <div class="space-x-2">
           <a href="">Terms and Conditions</a>
           <a href="">Return and Refund Policy </a>
